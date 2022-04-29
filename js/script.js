@@ -1,4 +1,4 @@
-﻿//Refernce Code Video - learn-webdev
+//Refernce Code Video - learn-webdev
 //https://www.youtube.com/watch?v=MR8HyVQtNDk&list=PLFUJKIpMnHdcWmNEbL9QQnWDp9rhHCWXB&index=1&t=436s&ab_channel=learn-webdev
 
 //Refernce Code Video - Coding With Nepal
@@ -16,7 +16,7 @@ const option_list = document.querySelector(".option_list");
 // Image Slider | learn-webdev
 var next = document.getElementById('NQ');
 
-var arr = ["img/1.jpeg", "img/2.jpeg", "img/3.jpeg", "img/4.jpeg", "img/5.jpeg", "img/6.jpeg", "img/7.jpeg", "img/8.jpeg", "img/9.jpeg", "img/10.jpeg" ];
+var arr = ["img/1.jpeg", "img/2.jpeg", "img/3.jpeg", "img/4.jpeg", "img/5.jpeg", "img/6.jpeg", "img/7.jpeg", "img/8.jpeg", "img/9.jpeg", "img/10.jpeg"];
 
 var imgcounter = 0;
 
@@ -56,7 +56,6 @@ let que_numb = 1;
 let userScore = 0;
 let counter;
 let counterLine;
-let widthValue = 0;
 
 //selecting all required elements
 const restart_quiz = result_box.querySelector(".buttons .restart");
@@ -64,17 +63,18 @@ const quit_quiz = result_box.querySelector(".buttons .quit");
 
 // if restartQuiz button clicked
 restart_quiz.onclick = ()=>{
+    imgcounter = 0;
     quiz_box.classList.add("activeQuiz"); //show quiz box
     result_box.classList.remove("activeResult"); //hide result box 
     que_count = 0;
     que_numb = 1;
     userScore = 0;
-    widthValue = 0;
     showQuetions(que_count); //calling showQestions function
     queCounter(que_numb); //passing que_numb value to queCounter
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
     next_btn.classList.remove("show"); //hide the next button
+    document.getElementById('image').src = arr[imgcounter];
 }
 // if quitQuiz button clicked
 quit_quiz.onclick = ()=>{
